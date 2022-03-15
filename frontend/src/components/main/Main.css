@@ -1,0 +1,22 @@
+.main-container {  
+    flex: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;          
+    background-color: #919191;
+    width: 80%;
+    margin: auto;
+    border-radius: 2%;
+}
+
+.online {
+    background-color: green;
+}
+
+.offline {
+    background-color: red;
+}
+
+.message {
+    font-size: xx-large;
+}
