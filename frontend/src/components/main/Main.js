@@ -5,7 +5,7 @@ function Main() {
     const [isBackendOnline, setBackendOnline] = useState(false);
 
     const healthcheck = async () => {
-        const healthcheckResult = await fetch("http://localhost:8082/health")
+        const healthcheckResult = await fetch("backend:8082/health")
         .then(resp => resp.ok)
         .catch(() => false);
 
