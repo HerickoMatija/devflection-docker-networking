@@ -35,15 +35,4 @@ function Main() {
     }
 }
 
-function healtcheckCall() {
-    return fetch("http://localhost:8082/health")
-        .then(resp => {
-            if (resp.ok) {
-                return true;
-            } else {
-                return false;
-            }
-        }).catch((error) => false);
-}
-
 export default Main;
