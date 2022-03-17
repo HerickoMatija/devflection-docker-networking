@@ -11,7 +11,7 @@ class HealthCheckController {
 
     @GetMapping("/health")
     @ResponseStatus(HttpStatus.OK)
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     String healthcheck() {
         return "ok";
     }
