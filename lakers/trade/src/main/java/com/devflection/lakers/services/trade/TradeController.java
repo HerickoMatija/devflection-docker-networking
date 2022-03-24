@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController()
 public class TradeController {
     
-    @GetMapping("/inquireAboutTrade")
+    @GetMapping("/trade")
     @ResponseStatus(HttpStatus.OK)
     @CrossOrigin(origins = "*")
     public String tradeInquiry() {
-        return "Yes, lets make a trade!";
+        return "Hello from the Lakers Trade Department!";
     }
 
 }

@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  lakers-hr:
+    container_name: lakers-hr
+    build:
+      context: ./hr/
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - 9081:8080
+    networks:
+      - lakers_internal      
+  lakers-trade:
+    container_name: lakers-trade
+    build:
+      context: ./trade/
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - 9082:8080
+    networks:
+      - lakers_internal
+      - nba
+
+networks:  
+  lakers_internal:
+    driver: bridge    
+  nba:
+    external: true
