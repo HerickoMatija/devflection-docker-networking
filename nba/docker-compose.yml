@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  nba:
+    container_name: nba
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - 9999:8080
+    networks:
+      - nba
+
+networks:
+  nba:
+    name: nba
+    driver: bridge
