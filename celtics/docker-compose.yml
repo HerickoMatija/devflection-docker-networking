@@ -26,8 +26,7 @@ services:
       - nba
 
 networks:
-  nba:
-    name: nba
-    driver: bridge
   celtics_internal:
-    driver: bridge
+    driver: bridge    
+  nba:
+    external: true
