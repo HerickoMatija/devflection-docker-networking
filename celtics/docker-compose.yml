@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  celtics-hr:
+    container_name: celtics-hr
+    build:
+      context: ./hr/
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - 8081:8080
+    networks:
+      - celtics_internal
+  celtics-trade:
+    container_name: celtics-trade
+    build:
+      context: ./trade/
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - 8082:8080
+    networks:
+      - celtics_internal
+      - nba
+
+networks:
+  nba:
+    name: nba
+    driver: bridge
+  celtics_internal:
+    driver: bridge
