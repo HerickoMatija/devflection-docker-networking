@@ -1,4 +1,9 @@
 # Devflection docker networking
 
-This repository contains an example of how to connect a frontend docker container and a backend docker container using docker compose. 
-On top of that it also shows how to break the network into smaller isolated sections.
+This repository shows how to make use of docker-compose network section
+to connect containers located in two different docker-compose files.
+
+The *nba* folder creates a network with the name *nba*, 
+which the *celtics* and *lakers* folders' docker-compose files import as external network and connect some containers to that network.
+
+For more information refer to the accompanying [blog post](http://devflection.com/posts/2022-03-27-docker-connect-two-containers/).
